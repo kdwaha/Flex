@@ -1,0 +1,30 @@
+[
+  {
+    "client": 0,
+    "task": "closed_qa",
+    "train_examples": 15,
+    "test_examples": 4,
+    "test_source": "deterministic_client_heldout_split"
+  },
+  {
+    "client": 1,
+    "task": "information_extraction",
+    "train_examples": 15,
+    "test_examples": 3,
+    "test_source": "deterministic_client_heldout_split"
+  },
+  {
+    "client": 2,
+    "task": "classification",
+    "train_examples": 16,
+    "test_examples": 4,
+    "test_source": "deterministic_client_heldout_split"
+  },
+  {
+    "client": 3,
+    "task": "summarization",
+    "train_examples": 16,
+    "test_examples": 3,
+    "test_source": "deterministic_client_heldout_split"
+  }
+]

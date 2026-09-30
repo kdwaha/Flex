@@ -1,0 +1,5 @@
+{
+  "completion_loss_spec": "response_tokens_including_real_eos_v1",
+  "prompt_and_padding_ignored": true,
+  "truncation": "EOS is scored only when present within max_length; never appended to a cut response."
+}

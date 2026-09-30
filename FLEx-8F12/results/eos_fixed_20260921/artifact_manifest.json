@@ -1,0 +1,560 @@
+{
+  "source_suite": "eos_fixed_ablation_20260921",
+  "omitted_json_fields": [
+    "generation_records",
+    "predictions",
+    "references"
+  ],
+  "files": {
+    "client_0_performance.png": {
+      "source": "report/client_0_performance.png",
+      "source_sha256": "9e34d4395ad79f212b0e646d6f2941e13934953a6e2023113139abf9b2b16e5e",
+      "published_sha256": "9e34d4395ad79f212b0e646d6f2941e13934953a6e2023113139abf9b2b16e5e"
+    },
+    "client_1_performance.png": {
+      "source": "report/client_1_performance.png",
+      "source_sha256": "ab1321a340d509bb4e982d7074405bd91a483861f5655cf0bc94b6e0729d1893",
+      "published_sha256": "ab1321a340d509bb4e982d7074405bd91a483861f5655cf0bc94b6e0729d1893"
+    },
+    "client_2_performance.png": {
+      "source": "report/client_2_performance.png",
+      "source_sha256": "0ece68848414cf38fa87334a8af49037c0fda12e75836e8ae271c1872208995b",
+      "published_sha256": "0ece68848414cf38fa87334a8af49037c0fda12e75836e8ae271c1872208995b"
+    },
+    "client_3_performance.png": {
+      "source": "report/client_3_performance.png",
+      "source_sha256": "b6f19dd11f3e456ef6b83044ed2cfc26e4f2a3de0bf76f318d2e0082cf903852",
+      "published_sha256": "b6f19dd11f3e456ef6b83044ed2cfc26e4f2a3de0bf76f318d2e0082cf903852"
+    },
+    "client_comparison.csv": {
+      "source": "report/client_comparison.csv",
+      "source_sha256": "16cebc88636f38b0cba18f4f53a34a4e921e7e15c2b737874c371b4e6f5f86e8",
+      "published_sha256": "16cebc88636f38b0cba18f4f53a34a4e921e7e15c2b737874c371b4e6f5f86e8"
+    },
+    "client_training_loss.png": {
+      "source": "report/client_training_loss.png",
+      "source_sha256": "fa8dbe2eabfabc1fce49739a97815e88f4570d5569e81f71d1cd42caaf28541e",
+      "published_sha256": "fa8dbe2eabfabc1fce49739a97815e88f4570d5569e81f71d1cd42caaf28541e"
+    },
+    "comparison.md": {
+      "source": "report/comparison.md",
+      "source_sha256": "3caabc8532d7940f8e18031cad53186427831a31b559be38953bb6a3ae2cb374",
+      "published_sha256": "c1666d82fed6e9aaa4cdaeff9b083f86aff760528088a80654b05ecaf536a7c7"
+    },
+    "federated_comparison.png": {
+      "source": "report/federated_comparison.png",
+      "source_sha256": "769aff2cc06a6474b8080ff48f84fa8da2998623412f27e89fe6d6ffd8e47fa6",
+      "published_sha256": "769aff2cc06a6474b8080ff48f84fa8da2998623412f27e89fe6d6ffd8e47fa6"
+    },
+    "generation_comparison.csv": {
+      "source": "report/generation_comparison.csv",
+      "source_sha256": "90da26a7de9edc4cbb6fd0a7a8f803887ad59cf42ba01f619a66f6d8911d503d",
+      "published_sha256": "90da26a7de9edc4cbb6fd0a7a8f803887ad59cf42ba01f619a66f6d8911d503d"
+    },
+    "global_performance.png": {
+      "source": "report/global_performance.png",
+      "source_sha256": "3b524b4d11b915b514aee53bccf9e53041ba9f9b8438a42b328f0bda184fd2b0",
+      "published_sha256": "3b524b4d11b915b514aee53bccf9e53041ba9f9b8438a42b328f0bda184fd2b0"
+    },
+    "hessian_client_0.png": {
+      "source": "report/hessian_client_0.png",
+      "source_sha256": "60237bb4dc29dd6c00795ecb3cc5ff83a2dacf9af20771576833b84295171cde",
+      "published_sha256": "60237bb4dc29dd6c00795ecb3cc5ff83a2dacf9af20771576833b84295171cde"
+    },
+    "hessian_client_1.png": {
+      "source": "report/hessian_client_1.png",
+      "source_sha256": "4e8a179a4524b0f923e4b62126483f2581c0d32a8695e8ce775fce0f8920960a",
+      "published_sha256": "4e8a179a4524b0f923e4b62126483f2581c0d32a8695e8ce775fce0f8920960a"
+    },
+    "hessian_client_2.png": {
+      "source": "report/hessian_client_2.png",
+      "source_sha256": "0e12a1ce74363fddaa2669bf15f27e9db54dd3782c2ee54c816bad4c84015281",
+      "published_sha256": "0e12a1ce74363fddaa2669bf15f27e9db54dd3782c2ee54c816bad4c84015281"
+    },
+    "hessian_client_3.png": {
+      "source": "report/hessian_client_3.png",
+      "source_sha256": "08bbaa18590512e95878301d1f57ebf98b5d7227c7fc3f93e2418a54d3c20b8f",
+      "published_sha256": "08bbaa18590512e95878301d1f57ebf98b5d7227c7fc3f93e2418a54d3c20b8f"
+    },
+    "hessian_comparison.csv": {
+      "source": "report/hessian_comparison.csv",
+      "source_sha256": "ebb72090ac4a529be706de1b1756e02e3628da228072a0928ac42cb8d9d8851c",
+      "published_sha256": "ebb72090ac4a529be706de1b1756e02e3628da228072a0928ac42cb8d9d8851c"
+    },
+    "hessian_comparison.md": {
+      "source": "report/hessian_comparison.md",
+      "source_sha256": "5f84b7aa7cf7a8bb417489168f39f7ba2ae24eaa9b72d1002a6fc989cce10b4c",
+      "published_sha256": "5f84b7aa7cf7a8bb417489168f39f7ba2ae24eaa9b72d1002a6fc989cce10b4c"
+    },
+    "hessian_global.png": {
+      "source": "report/hessian_global.png",
+      "source_sha256": "bdcf814e53dc3a53619febc0d842444c2b9066b4d2784672838df6c423966492",
+      "published_sha256": "bdcf814e53dc3a53619febc0d842444c2b9066b4d2784672838df6c423966492"
+    },
+    "local_performance.png": {
+      "source": "report/local_performance.png",
+      "source_sha256": "41da652f4a9f177c51193b0507185518f1ca7aafc098abeb05b567075138d2fb",
+      "published_sha256": "41da652f4a9f177c51193b0507185518f1ca7aafc098abeb05b567075138d2fb"
+    },
+    "round30_comparison.csv": {
+      "source": "report/round30_comparison.csv",
+      "source_sha256": "cc2b5737201b44bb4c8dd7e0efb76d4df27b34d72993aa7932301171c89534aa",
+      "published_sha256": "cc2b5737201b44bb4c8dd7e0efb76d4df27b34d72993aa7932301171c89534aa"
+    },
+    "spectrum_comparison.png": {
+      "source": "report/spectrum_comparison.png",
+      "source_sha256": "4d0c07af2c8cdeedfea2c7aa336609ca23386cf6c29cd3aa3c1480dc5b481e94",
+      "published_sha256": "4d0c07af2c8cdeedfea2c7aa336609ca23386cf6c29cd3aa3c1480dc5b481e94"
+    },
+    "measurements/fedavg/args.json": {
+      "source": "fedavg/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155919/args.json",
+      "source_sha256": "1aae3c05a534ab62f8405a1d021789baba96ca61f4057530ef8e345a3ef06042",
+      "published_sha256": "c43f825185ee73bf8f3310b219c968b93287ee3ada6bb12834f1dc95fd593106"
+    },
+    "measurements/fedavg/client_partition.json": {
+      "source": "fedavg/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155919/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/fedavg/loss_spec.json": {
+      "source": "fedavg/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155919/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/fedavg/diagnostics.json": {
+      "source": "fedavg/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155919/diagnostics.json",
+      "source_sha256": "d0e0af06a770ed2519305d4b9d5c2bcbe87252ef26fcb9689e3c2e17489ed1b2",
+      "published_sha256": "6e9ca9680a4ea75fd9a6b5a42af980e6b184e40dd74af1aa960c4f62959f31e3"
+    },
+    "measurements/fedavg/metrics.json": {
+      "source": "fedavg/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155919/metrics.json",
+      "source_sha256": "4fc3b9dd3d3fa3bb15d313aa46d6e558fbfd336dd8087b0271488a85d26e281b",
+      "published_sha256": "7b00385897580480093bb96de661b1926b65876b8a43478ccfc1ab1df55d9c52"
+    },
+    "measurements/fedavg/diagnostics.csv": {
+      "source": "fedavg/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155919/diagnostics.csv",
+      "source_sha256": "ff1bed42e5b9666fb11b55885bb09767d5f996f3aa5d79b58c2aad8e7b74ea32",
+      "published_sha256": "ff1bed42e5b9666fb11b55885bb09767d5f996f3aa5d79b58c2aad8e7b74ea32"
+    },
+    "measurements/fedsa/args.json": {
+      "source": "fedsa/dolly_80_fedsa_c4s4_i-1_b4a1_l512_r8a16_20260921161405/args.json",
+      "source_sha256": "147673859ce0f562f3fbc266f7e624ff31e4a3f2b2c441c2baeddc9833b570e0",
+      "published_sha256": "a5b0852982bf1fd1ce7834fa147ac2f521f310caeb57703036dd768d9bfaab29"
+    },
+    "measurements/fedsa/client_partition.json": {
+      "source": "fedsa/dolly_80_fedsa_c4s4_i-1_b4a1_l512_r8a16_20260921161405/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/fedsa/loss_spec.json": {
+      "source": "fedsa/dolly_80_fedsa_c4s4_i-1_b4a1_l512_r8a16_20260921161405/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/fedsa/diagnostics.json": {
+      "source": "fedsa/dolly_80_fedsa_c4s4_i-1_b4a1_l512_r8a16_20260921161405/diagnostics.json",
+      "source_sha256": "10daee3eabfec212bb50e823c6117de195c6742e6da8bd69059e848636d66a27",
+      "published_sha256": "678918e6d673c6887d6136d2022adf407348a48b3400c5fd0a5fb96c3e753a08"
+    },
+    "measurements/fedsa/metrics.json": {
+      "source": "fedsa/dolly_80_fedsa_c4s4_i-1_b4a1_l512_r8a16_20260921161405/metrics.json",
+      "source_sha256": "16a5a1644219af28ab73fda3d903b4ab822829ad04f8890642d4bf2cd8e56924",
+      "published_sha256": "7d8c772266967bfdd5be9a4f904fa023b00eafb47318d6ceac8f225b50a70fc1"
+    },
+    "measurements/fedsa/diagnostics.csv": {
+      "source": "fedsa/dolly_80_fedsa_c4s4_i-1_b4a1_l512_r8a16_20260921161405/diagnostics.csv",
+      "source_sha256": "aeaa75bb12c7ae88ec39ae40b02cec77477a5af0c564abf528ff13a103f7c10a",
+      "published_sha256": "aeaa75bb12c7ae88ec39ae40b02cec77477a5af0c564abf528ff13a103f7c10a"
+    },
+    "measurements/frlora/args.json": {
+      "source": "frlora/dolly_80_frlora_c4s4_i-1_b4a1_l512_r8a16_20260921162855/args.json",
+      "source_sha256": "49d80512dadc9ba0f85ca0855d2bf7c64a8aa10fb986ae98d36a445a9f9df982",
+      "published_sha256": "3081aef73d6157b26cf7839d222d7ffa33536e5114819935eefea41681fb8a55"
+    },
+    "measurements/frlora/client_partition.json": {
+      "source": "frlora/dolly_80_frlora_c4s4_i-1_b4a1_l512_r8a16_20260921162855/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/frlora/loss_spec.json": {
+      "source": "frlora/dolly_80_frlora_c4s4_i-1_b4a1_l512_r8a16_20260921162855/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/frlora/diagnostics.json": {
+      "source": "frlora/dolly_80_frlora_c4s4_i-1_b4a1_l512_r8a16_20260921162855/diagnostics.json",
+      "source_sha256": "3ec14172460a0b5bca2f50ff0a818755661850bef3cb514a790130d51303abe8",
+      "published_sha256": "3aab350c0e77845f830f14e4921c131b41f4a36c9cd2259f86b6e12ce8ae8deb"
+    },
+    "measurements/frlora/metrics.json": {
+      "source": "frlora/dolly_80_frlora_c4s4_i-1_b4a1_l512_r8a16_20260921162855/metrics.json",
+      "source_sha256": "228efd692978616b99af5c732def41419ba0ed1e4a07c58c658f27562f680ac1",
+      "published_sha256": "22f333627651d0a6b1242b30e63224d55c4864d786c694de98d89096af48c52e"
+    },
+    "measurements/frlora/diagnostics.csv": {
+      "source": "frlora/dolly_80_frlora_c4s4_i-1_b4a1_l512_r8a16_20260921162855/diagnostics.csv",
+      "source_sha256": "78fea93a369aa2bffacf67105e456d66010411bdcdd5a5610a08b2a98c392ee0",
+      "published_sha256": "78fea93a369aa2bffacf67105e456d66010411bdcdd5a5610a08b2a98c392ee0"
+    },
+    "measurements/frlora_scaffold/args.json": {
+      "source": "frlora_scaffold/dolly_80_frlora_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921164355/args.json",
+      "source_sha256": "187d68ed4e9cddaacd6de1d16f6a98557541bd2f38e37f74011c7b26ef9bcabf",
+      "published_sha256": "94ac16605052dbb30c72a4df2d0d46e391bacf0cde1c9cf873494a693fa1b1c3"
+    },
+    "measurements/frlora_scaffold/client_partition.json": {
+      "source": "frlora_scaffold/dolly_80_frlora_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921164355/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/frlora_scaffold/loss_spec.json": {
+      "source": "frlora_scaffold/dolly_80_frlora_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921164355/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/frlora_scaffold/diagnostics.json": {
+      "source": "frlora_scaffold/dolly_80_frlora_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921164355/diagnostics.json",
+      "source_sha256": "82e8133dab2f5f6c736bfbbd8a928eb3ac890d2a69d3b720e97197010d6c212d",
+      "published_sha256": "f1b929dba747a4f1a7bf7a5b9b757e37934db065611b26ab8b0c0c00b98cf015"
+    },
+    "measurements/frlora_scaffold/metrics.json": {
+      "source": "frlora_scaffold/dolly_80_frlora_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921164355/metrics.json",
+      "source_sha256": "6e30ff143f064a44accc09b987d7be99cb6c65f27bce0ca5de5c858204741590",
+      "published_sha256": "425a3ef396c4bb22d29bf385e7240fb2058b5c670d82b58a4b643530de3bf3c1"
+    },
+    "measurements/frlora_scaffold/diagnostics.csv": {
+      "source": "frlora_scaffold/dolly_80_frlora_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921164355/diagnostics.csv",
+      "source_sha256": "f5e28a541268c820fc6108e33fe48a6a06f3860b9f18d4918a480b2afb2c85a2",
+      "published_sha256": "f5e28a541268c820fc6108e33fe48a6a06f3860b9f18d4918a480b2afb2c85a2"
+    },
+    "measurements/pflalign/args.json": {
+      "source": "pflalign/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921173011/args.json",
+      "source_sha256": "7085d5f8e7a46cbe2257412b35c0ae9961b64d97cc18f36634da763596f4af47",
+      "published_sha256": "f61cb41cd4a82a9d11d94d924b920ed67e34d07d637c8fc9a9303992cd34d7e4"
+    },
+    "measurements/pflalign/client_partition.json": {
+      "source": "pflalign/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921173011/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign/loss_spec.json": {
+      "source": "pflalign/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921173011/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign/diagnostics.json": {
+      "source": "pflalign/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921173011/diagnostics.json",
+      "source_sha256": "6e8007954b95cb32d577fc85ee2164d7095d562127103c849736fd5d194d06b4",
+      "published_sha256": "fee058d3aba42f2c62f7f508509620b92115de6c2994eea69b1e678766604c1b"
+    },
+    "measurements/pflalign/metrics.json": {
+      "source": "pflalign/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921173011/metrics.json",
+      "source_sha256": "841e5d1a7dc0fe55c7fc8d869628ddf524391b9b39240f0a51932786fb4b0ae7",
+      "published_sha256": "a397fbacea01de1c835a524764f38b2e85194808fc4ec52b85724bd11fad89a9"
+    },
+    "measurements/pflalign/diagnostics.csv": {
+      "source": "pflalign/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921173011/diagnostics.csv",
+      "source_sha256": "6a2b68ebf5e3a042e90628bbcd852f1e00be34b75e3e6573b9e922e23e96a7d3",
+      "published_sha256": "6a2b68ebf5e3a042e90628bbcd852f1e00be34b75e3e6573b9e922e23e96a7d3"
+    },
+    "measurements/pflalign_constant_gamma/args.json": {
+      "source": "pflalign_constant_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921182210/args.json",
+      "source_sha256": "65663d6523ee16fd2ab78a246e1c1a6c63a7dc3cc2db7052f157381690f22e85",
+      "published_sha256": "2e0ccd28e3d135f103592d4884572ed05f533f3822d9106b998cec0b3e6d3781"
+    },
+    "measurements/pflalign_constant_gamma/client_partition.json": {
+      "source": "pflalign_constant_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921182210/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_constant_gamma/loss_spec.json": {
+      "source": "pflalign_constant_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921182210/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_constant_gamma/diagnostics.json": {
+      "source": "pflalign_constant_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921182210/diagnostics.json",
+      "source_sha256": "05a10b3cd0e31e7ba0ced74c93f829c08492fb32d7341364ebfcdf5df21fe4ba",
+      "published_sha256": "c3b0912b0565ad9c4292f872daf8cd3cb3635470c50ec8689c8842fb2b11c852"
+    },
+    "measurements/pflalign_constant_gamma/metrics.json": {
+      "source": "pflalign_constant_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921182210/metrics.json",
+      "source_sha256": "2bd382244fd72338f1750225c7ffc9f8d197b24a5df71f1128ace6b6c6be689e",
+      "published_sha256": "b115da18eb819f4bb2517fc7af2011d5493bec974a77fac41e5d6b462fd6867e"
+    },
+    "measurements/pflalign_constant_gamma/diagnostics.csv": {
+      "source": "pflalign_constant_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921182210/diagnostics.csv",
+      "source_sha256": "c6310873b3cd6fda25c36b95aa0aba0265e5be5d0f62f74738806bc90d70cacf",
+      "published_sha256": "c6310873b3cd6fda25c36b95aa0aba0265e5be5d0f62f74738806bc90d70cacf"
+    },
+    "measurements/pflalign_constant_gamma_one/args.json": {
+      "source": "pflalign_constant_gamma_one/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260922003623/args.json",
+      "source_sha256": "bb51e8ed288ed16182df384d2a8839776f468f701163c2852aee5e17b430cfe9",
+      "published_sha256": "e8ed2778a85f80293791ca00deb0e8d18bfca20406f5d47b2b1b1d356338502b"
+    },
+    "measurements/pflalign_constant_gamma_one/client_partition.json": {
+      "source": "pflalign_constant_gamma_one/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260922003623/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_constant_gamma_one/loss_spec.json": {
+      "source": "pflalign_constant_gamma_one/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260922003623/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_constant_gamma_one/diagnostics.json": {
+      "source": "pflalign_constant_gamma_one/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260922003623/diagnostics.json",
+      "source_sha256": "040855409df6904131512aa34020af70a7b52866b7f253a0f34a8baecff4c488",
+      "published_sha256": "cd607ddec10e62a08d6d0d9eb2af252115337959598a5b7e71891bf7c451af4f"
+    },
+    "measurements/pflalign_constant_gamma_one/metrics.json": {
+      "source": "pflalign_constant_gamma_one/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260922003623/metrics.json",
+      "source_sha256": "5a0b3043e87c07d6b5243028ac62171179dad0f1e73aaa2efc07329f255aad33",
+      "published_sha256": "bb735f15ae8486ca90d59dc8fd17bdc8160e83ffc368f0854da743de6e20f91a"
+    },
+    "measurements/pflalign_constant_gamma_one/diagnostics.csv": {
+      "source": "pflalign_constant_gamma_one/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260922003623/diagnostics.csv",
+      "source_sha256": "a5044e8735fc4c8a9c0792a25220b4549ff1d6d3e9734b1e4fed4df960316003",
+      "published_sha256": "a5044e8735fc4c8a9c0792a25220b4549ff1d6d3e9734b1e4fed4df960316003"
+    },
+    "measurements/pflalign_hard_gamma/args.json": {
+      "source": "pflalign_hard_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921184000/args.json",
+      "source_sha256": "ba9b3b885ea428c64c7e0729bfdb55c7cf43249d8e318110c72769684e00915b",
+      "published_sha256": "dbad78be5ebfacc97f25e83457dedc504b13906a41fb9747b4f633cb7d158a79"
+    },
+    "measurements/pflalign_hard_gamma/client_partition.json": {
+      "source": "pflalign_hard_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921184000/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_hard_gamma/loss_spec.json": {
+      "source": "pflalign_hard_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921184000/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_hard_gamma/diagnostics.json": {
+      "source": "pflalign_hard_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921184000/diagnostics.json",
+      "source_sha256": "663897a39dda4cf5f1647634e04bfd0beaad657bdc385893be4b807b5a7d0e00",
+      "published_sha256": "fda30b01998f84acb53b0ec39bc17db1f45d1c021f061346742ebade7fda80a5"
+    },
+    "measurements/pflalign_hard_gamma/metrics.json": {
+      "source": "pflalign_hard_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921184000/metrics.json",
+      "source_sha256": "ed40c8c9208efbd4a9fb45777c08d9b349919eda10fa953a5c21062ff078bde9",
+      "published_sha256": "cd62026ca09aa2899751e5c1e3059d2f48b3d37b6249fc75b436e8c4dca73306"
+    },
+    "measurements/pflalign_hard_gamma/diagnostics.csv": {
+      "source": "pflalign_hard_gamma/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921184000/diagnostics.csv",
+      "source_sha256": "990adffc4d882e5faaf0515b8911db1529012fac8ebb534e9d81bdad179f5829",
+      "published_sha256": "990adffc4d882e5faaf0515b8911db1529012fac8ebb534e9d81bdad179f5829"
+    },
+    "measurements/pflalign_no_correction/args.json": {
+      "source": "pflalign_no_correction/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921180459/args.json",
+      "source_sha256": "ef89e291c16a61a2d6845e2e2cb9d120c5509961aaf5e62d2a18a430908f73f0",
+      "published_sha256": "660cbff6b048f0a4f8819ada1c464e5917b30243b125f9bc8485aebe03b04202"
+    },
+    "measurements/pflalign_no_correction/client_partition.json": {
+      "source": "pflalign_no_correction/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921180459/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_no_correction/loss_spec.json": {
+      "source": "pflalign_no_correction/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921180459/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_no_correction/diagnostics.json": {
+      "source": "pflalign_no_correction/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921180459/diagnostics.json",
+      "source_sha256": "f5569ceabf1e6d4dd2294531d0903bf92ceef68972727a54832f9da1af53dc4d",
+      "published_sha256": "c30c9a08fa35f4dd926db5fad4fe463d51daf99080e32131d0102f7ec1a49fa2"
+    },
+    "measurements/pflalign_no_correction/metrics.json": {
+      "source": "pflalign_no_correction/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921180459/metrics.json",
+      "source_sha256": "ac056d19da18cd4f8211c29cb885c5ca7eeed0ea6a9dc8414e166c9fefcfa2e4",
+      "published_sha256": "ebfd460bff76d64f345225ecdd3c1be6245780c59db8de8ae62b4f7e3327d2f9"
+    },
+    "measurements/pflalign_no_correction/diagnostics.csv": {
+      "source": "pflalign_no_correction/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921180459/diagnostics.csv",
+      "source_sha256": "20bef59a4c66d640bbfe3e8d4e38d499b721679073c78867790246ab8ba69b81",
+      "published_sha256": "20bef59a4c66d640bbfe3e8d4e38d499b721679073c78867790246ab8ba69b81"
+    },
+    "measurements/pflalign_no_personalization/args.json": {
+      "source": "pflalign_no_personalization/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921185736/args.json",
+      "source_sha256": "f603297c5022ae754a8352c061c1639cf76d0f3e99048ad40f8cc3704b598ede",
+      "published_sha256": "6d478c8b00d36c44d6e8de6a305b843214b8ba5c633939348327a69172405ff5"
+    },
+    "measurements/pflalign_no_personalization/client_partition.json": {
+      "source": "pflalign_no_personalization/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921185736/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_no_personalization/loss_spec.json": {
+      "source": "pflalign_no_personalization/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921185736/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_no_personalization/diagnostics.json": {
+      "source": "pflalign_no_personalization/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921185736/diagnostics.json",
+      "source_sha256": "54f8e4ed7a9be315ec5960a3089fa1407fd5a936dec4bab68b1b29316c373383",
+      "published_sha256": "8577e6dd249f2acfc7b5eda0ce3dd49c770306c344343b503c1d78a51709af0e"
+    },
+    "measurements/pflalign_no_personalization/metrics.json": {
+      "source": "pflalign_no_personalization/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921185736/metrics.json",
+      "source_sha256": "e651cf2721e4c54e64621948ec582d23d0ef93304b8182110ca011d5de53c576",
+      "published_sha256": "f7794444976b6658c5bf8710aadd685eacd2ba614fbb9b04d1b5c65eb4f29a58"
+    },
+    "measurements/pflalign_no_personalization/diagnostics.csv": {
+      "source": "pflalign_no_personalization/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921185736/diagnostics.csv",
+      "source_sha256": "c220c2f37fd330b4e9c381f692f4ec11eb8b2d0a94cb7ebeeb8b81580d681410",
+      "published_sha256": "c220c2f37fd330b4e9c381f692f4ec11eb8b2d0a94cb7ebeeb8b81580d681410"
+    },
+    "measurements/pflalign_no_preconditioner/args.json": {
+      "source": "pflalign_no_preconditioner/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921174758/args.json",
+      "source_sha256": "8dfb377b88a0d0a0b06a4376bf65ad142b83c6f8ff3fc6bf8a48c1094e2f209a",
+      "published_sha256": "a14a7fad6b664887a40d39f79a029a6e07641f890f2e73d7841c7a8d423e14c3"
+    },
+    "measurements/pflalign_no_preconditioner/client_partition.json": {
+      "source": "pflalign_no_preconditioner/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921174758/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_no_preconditioner/loss_spec.json": {
+      "source": "pflalign_no_preconditioner/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921174758/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_no_preconditioner/diagnostics.json": {
+      "source": "pflalign_no_preconditioner/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921174758/diagnostics.json",
+      "source_sha256": "9a0b54e7e098ab0e5db2cff1fe11e0dcda9cc474e174c5afbd1f84f048f0e79d",
+      "published_sha256": "34edf36d6435bd63e16cff33aa6f64d65d494abd3399462c38c764f86f3f4316"
+    },
+    "measurements/pflalign_no_preconditioner/metrics.json": {
+      "source": "pflalign_no_preconditioner/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921174758/metrics.json",
+      "source_sha256": "fc65b6086bdc21d5c55fc9b0af8e08ffbabf0121f3391f639919449e095c361a",
+      "published_sha256": "76acabb034c7dd8e5273831931c8f80c441d1f018bff00f064d3920adb1d9cd9"
+    },
+    "measurements/pflalign_no_preconditioner/diagnostics.csv": {
+      "source": "pflalign_no_preconditioner/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921174758/diagnostics.csv",
+      "source_sha256": "39f2abc750812cfcc83d54c0ff231b0b31f4b81dcac40a9bcfbadf50110f0e1c",
+      "published_sha256": "39f2abc750812cfcc83d54c0ff231b0b31f4b81dcac40a9bcfbadf50110f0e1c"
+    },
+    "measurements/pflalign_sgd/args.json": {
+      "source": "pflalign_sgd/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921191537/args.json",
+      "source_sha256": "c89be44b99da7cf2503d5bb1b4fdf34a968f840b40d47d45fb9117541a86d19b",
+      "published_sha256": "6e6c5d27d2f60426f62147148ceb02f7c897db1e0e478f82783aae5f412fff1e"
+    },
+    "measurements/pflalign_sgd/client_partition.json": {
+      "source": "pflalign_sgd/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921191537/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/pflalign_sgd/loss_spec.json": {
+      "source": "pflalign_sgd/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921191537/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/pflalign_sgd/diagnostics.json": {
+      "source": "pflalign_sgd/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921191537/diagnostics.json",
+      "source_sha256": "9955add05ab22f5ea36ce64226c5c42727c41531dd60f64706cfeebf0b28f610",
+      "published_sha256": "8af05ce6716658cca7170f96b41afbcc366ea028e4ec075cdbb3d51a8227e8cb"
+    },
+    "measurements/pflalign_sgd/metrics.json": {
+      "source": "pflalign_sgd/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921191537/metrics.json",
+      "source_sha256": "5e4c6b92760eeac5465a57db7945e97819e256aeb1ef8525a97bd0effeb7655a",
+      "published_sha256": "f5c0444bce0a94fe6f0684391218bac2d910861f36631aa71b05f5f3f81c73c7"
+    },
+    "measurements/pflalign_sgd/diagnostics.csv": {
+      "source": "pflalign_sgd/dolly_80_pflalign_c4s4_i-1_b4a1_l512_r8a16_20260921191537/diagnostics.csv",
+      "source_sha256": "2d5ef2db7eaad873edf41687761aeeceab9be70ed2555c27ffa546d351af852f",
+      "published_sha256": "2d5ef2db7eaad873edf41687761aeeceab9be70ed2555c27ffa546d351af852f"
+    },
+    "measurements/scaffold/args.json": {
+      "source": "scaffold/dolly_80_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921165934/args.json",
+      "source_sha256": "38f4468b112e0678e4021ba49b0ff3f5fab01d9dbfd07fcefb5b89f5c0dbfb49",
+      "published_sha256": "f7926fa1b67d882764f63bb2832f63de7dbc2b99227d58136b9f62930e3b013e"
+    },
+    "measurements/scaffold/client_partition.json": {
+      "source": "scaffold/dolly_80_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921165934/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/scaffold/loss_spec.json": {
+      "source": "scaffold/dolly_80_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921165934/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/scaffold/diagnostics.json": {
+      "source": "scaffold/dolly_80_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921165934/diagnostics.json",
+      "source_sha256": "fa10b85ba66ffa7dd578c895955f8687bff632d6da4e7848aa1f113f1a3b22c8",
+      "published_sha256": "410c9688543219293e6168aafc45dbc53800c8bb8827aab9ea20a4bd814d2846"
+    },
+    "measurements/scaffold/metrics.json": {
+      "source": "scaffold/dolly_80_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921165934/metrics.json",
+      "source_sha256": "963d63d318c077a13af1e25021574b005c6c3c2f3a5efbd1ea0f1b2055cc2b2b",
+      "published_sha256": "60eee754c37ef30ba5b216b460a29c8881dcfcab5322d649650690d48261d39d"
+    },
+    "measurements/scaffold/diagnostics.csv": {
+      "source": "scaffold/dolly_80_scaffold_c4s4_i-1_b4a1_l512_r8a16_20260921165934/diagnostics.csv",
+      "source_sha256": "ac58ccfbe680cddf3535e46be0cdf9139002ec6585c2414b0a154251fae5a3d5",
+      "published_sha256": "ac58ccfbe680cddf3535e46be0cdf9139002ec6585c2414b0a154251fae5a3d5"
+    },
+    "measurements/scaffold_reset/args.json": {
+      "source": "scaffold_reset/dolly_80_scaffold_reset_c4s4_i-1_b4a1_l512_r8a16_20260921171442/args.json",
+      "source_sha256": "9f10d03608e164ab5ba1551124b21b548901ee2a61c36fc0ac5a6f8709d0c6e4",
+      "published_sha256": "a426c79572d7f9f6a5cf0cc3e98676992827214d855b29d7de9a96f246d2338a"
+    },
+    "measurements/scaffold_reset/client_partition.json": {
+      "source": "scaffold_reset/dolly_80_scaffold_reset_c4s4_i-1_b4a1_l512_r8a16_20260921171442/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/scaffold_reset/loss_spec.json": {
+      "source": "scaffold_reset/dolly_80_scaffold_reset_c4s4_i-1_b4a1_l512_r8a16_20260921171442/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/scaffold_reset/diagnostics.json": {
+      "source": "scaffold_reset/dolly_80_scaffold_reset_c4s4_i-1_b4a1_l512_r8a16_20260921171442/diagnostics.json",
+      "source_sha256": "b7476ac946204d559fa6caa01f6a61f290dd680569bb6826fb7f89803baf52ab",
+      "published_sha256": "9ab03c74b70912aa21cf9de3050c77b658caa6ca74cf194c595d0572dac986d8"
+    },
+    "measurements/scaffold_reset/metrics.json": {
+      "source": "scaffold_reset/dolly_80_scaffold_reset_c4s4_i-1_b4a1_l512_r8a16_20260921171442/metrics.json",
+      "source_sha256": "312b690b9fcab56e49611d72f43524b7740146bd51d687744866a792d28fe17d",
+      "published_sha256": "76f5e6b66325e98aa9344488164ed657881b2bb06f0b5e3e3d4907a71c7dab93"
+    },
+    "measurements/scaffold_reset/diagnostics.csv": {
+      "source": "scaffold_reset/dolly_80_scaffold_reset_c4s4_i-1_b4a1_l512_r8a16_20260921171442/diagnostics.csv",
+      "source_sha256": "b2924d1a0f052c9b1f85ec4348264c18f3de7d24d94af3d2d34b00659d079f4c",
+      "published_sha256": "b2924d1a0f052c9b1f85ec4348264c18f3de7d24d94af3d2d34b00659d079f4c"
+    },
+    "measurements/untrained/args.json": {
+      "source": "untrained/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155836/args.json",
+      "source_sha256": "42daebbac44de942816f932d7d703564e1cca551ce6a2f3971a4cb805226d791",
+      "published_sha256": "1bc98ec37cd90339625475668c789ba7e7e40f9db62a5a57ca48199cc7b6476c"
+    },
+    "measurements/untrained/client_partition.json": {
+      "source": "untrained/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155836/client_partition.json",
+      "source_sha256": "3c0bf685ab3c50668566ee1c5c960b8170e6fca600eefd164fbbbb8495162de9",
+      "published_sha256": "d745c7fc16c7b33cc2a79caeac802c01af0db20199f1e6a30df368fcab5336ed"
+    },
+    "measurements/untrained/loss_spec.json": {
+      "source": "untrained/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155836/loss_spec.json",
+      "source_sha256": "802035e400c222aa9150acab51598d00cc464c7fbe2f6f6fe9e302a985412b7d",
+      "published_sha256": "bd6ee60101de50c3f41e0bbb0dedc39dcfb1804314a77a0d967a9c5d385f1712"
+    },
+    "measurements/untrained/diagnostics.json": {
+      "source": "untrained/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155836/diagnostics.json",
+      "source_sha256": "3db479706e08eee6efca72eee8cc5270f0680e1c0126665ea7186bdf0ad2e64d",
+      "published_sha256": "3ee5954d86b15cfba2f8fb7f8c999bf00134febf5a824cfcd2f119ae473c0736"
+    },
+    "measurements/untrained/metrics.json": {
+      "source": "untrained/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155836/metrics.json",
+      "source_sha256": "10e6fe58269d932597a58d6c838270a7cbbc80e8c9773e4cc7dc884837013950",
+      "published_sha256": "3ca9a4f42d9b73df3bce9444bff94875fb8681a0acb35fb2c2c5055177537115"
+    },
+    "measurements/untrained/diagnostics.csv": {
+      "source": "untrained/dolly_80_fedavg_c4s4_i-1_b4a1_l512_r8a16_20260921155836/diagnostics.csv",
+      "source_sha256": "d31cf92d41f1e6efc4f49956f60449a62b35483f079bdc73fc9293555f91f4b2",
+      "published_sha256": "d31cf92d41f1e6efc4f49956f60449a62b35483f079bdc73fc9293555f91f4b2"
+    }
+  }
+}

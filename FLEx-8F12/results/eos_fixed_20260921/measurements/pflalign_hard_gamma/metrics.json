@@ -1,0 +1,67 @@
+{
+  "algorithm": "pflalign",
+  "rounds": 30,
+  "clients": 4,
+  "sampled_clients": 4,
+  "aggregation_weighting": "sample",
+  "test_data": {
+    "source": "deterministic_client_heldout_split",
+    "used_for_local_training": false,
+    "record_level_disjoint_split": true
+  },
+  "evaluation": {
+    "per_client": [
+      {
+        "client": 0,
+        "task": "closed_qa",
+        "examples": 4,
+        "eval_loss": 1.5858932466649298,
+        "test_loss": 1.5858932466649298,
+        "perplexity": 4.88365173641146,
+        "token_accuracy": 0.6666666666666666,
+        "nll_sum": 318.7645425796509,
+        "target_tokens": 201,
+        "correct_tokens": 134
+      },
+      {
+        "client": 1,
+        "task": "information_extraction",
+        "examples": 3,
+        "eval_loss": 2.013499959873783,
+        "test_loss": 2.013499959873783,
+        "perplexity": 7.489484423707201,
+        "token_accuracy": 0.5609756097560976,
+        "nll_sum": 908.0884819030762,
+        "target_tokens": 451,
+        "correct_tokens": 253
+      },
+      {
+        "client": 2,
+        "task": "classification",
+        "examples": 4,
+        "eval_loss": 0.843712716732385,
+        "test_loss": 0.843712716732385,
+        "perplexity": 2.3249829756987057,
+        "token_accuracy": 0.7547169811320755,
+        "nll_sum": 89.43354797363281,
+        "target_tokens": 106,
+        "correct_tokens": 80
+      },
+      {
+        "client": 3,
+        "task": "summarization",
+        "examples": 3,
+        "eval_loss": 0.6764301484630953,
+        "test_loss": 0.6764301484630953,
+        "perplexity": 1.9668438442122527,
+        "token_accuracy": 0.8494623655913979,
+        "nll_sum": 377.4480228424072,
+        "target_tokens": 558,
+        "correct_tokens": 474
+      }
+    ],
+    "weighted_eval_loss": 1.2870323672483033,
+    "weighted_perplexity": 3.622021760270175,
+    "weighting": "completion_tokens"
+  }
+}
