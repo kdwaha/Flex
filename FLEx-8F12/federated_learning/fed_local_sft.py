@@ -3,8 +3,9 @@ import copy
 from trl import SFTTrainer
 from transformers import TrainerCallback
 from peft import get_peft_model_state_dict, set_peft_model_state_dict
+from .pflalign import PFLAlignOptimizer
 
-def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_args, local_dataset, formatting_prompts_func, data_collator, global_dict, local_auxiliary, global_auxiliary):
+def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_args, local_dataset, formatting_prompts_func, data_collator, global_dict, local_auxiliary, global_auxiliary, pflalign_state=None):
     
     if fed_args.fed_alg == 'fedprox':
         trainer = SFTTrainerFedProx(
@@ -19,7 +20,7 @@ def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_
             global_state=global_dict,
             prox_mu=fed_args.prox_mu,
         )
-    elif fed_args.fed_alg == 'scaffold':
+    elif fed_args.fed_alg in ['scaffold', 'frlora_scaffold', 'scaffold_reset']:
         trainer = SFTTrainerSCAFFOLD(
             model=model,
             # tokenizer=tokenizer,
@@ -34,7 +35,21 @@ def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_
             global_auxiliary=global_auxiliary,
         )
         trainer.add_callback(SCAFFOLD_Callback(trainer.correction, model))
-    elif (fed_args.fed_alg in ['fedavg', 'fedavgm', 'fedadagrad', 'fedyogi', 'fedadam', 'flexlora']) or (fed_args.fed_alg).startswith('local'):
+    elif fed_args.fed_alg == 'pflalign':
+        trainer = SFTTrainerPFLAlign(
+            model=model,
+            args=training_args,
+            train_dataset=local_dataset,
+            formatting_func=formatting_prompts_func,
+            data_collator=data_collator,
+            pflalign_state=pflalign_state,
+            beta=fed_args.pflalign_beta,
+            epsilon=fed_args.pflalign_epsilon,
+        )
+    elif (fed_args.fed_alg in [
+        'fedavg', 'fedsa', 'frlora', 'fedavgm', 'fedadagrad', 'fedyogi',
+        'fedadam', 'flexlora',
+    ]) or (fed_args.fed_alg).startswith('local'):
         trainer = SFTTrainer(
             model=model,
             # tokenizer=tokenizer,
@@ -48,6 +63,33 @@ def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_
     else:
         raise ValueError(f'Unsupported `fed_alg`: {fed_args.fed_alg}')
     return trainer
+
+
+class SFTTrainerPFLAlign(SFTTrainer):
+    def __init__(self, pflalign_state, beta, epsilon, **kwargs):
+        self.pflalign_state = pflalign_state
+        self.pflalign_beta = beta
+        self.pflalign_epsilon = epsilon
+        super().__init__(**kwargs)
+
+    def create_optimizer(self):
+        if self.optimizer is None:
+            self.optimizer = PFLAlignOptimizer(
+                self.model.named_parameters(),
+                lr=self.args.learning_rate,
+                beta=self.pflalign_beta,
+                epsilon=self.pflalign_epsilon,
+                local_steps=self.pflalign_state['local_steps'],
+                delta=self.pflalign_state['delta'],
+                v=self.pflalign_state['v'],
+                preconditioner=self.pflalign_state['P'],
+                variant=self.pflalign_state.get('variant', 'full'),
+            )
+        return self.optimizer
+
+    def get_persistent_state(self):
+        optimizer = getattr(self.optimizer, "optimizer", self.optimizer)
+        return optimizer.persistent_state()
 
 class SFTTrainerFedProx(SFTTrainer):
     def __init__(self, global_state, prox_mu, **kwargs):
@@ -109,13 +151,14 @@ class SFTTrainerSCAFFOLD(SFTTrainer):
     def get_auxiliary_param(self):
         auxiliary_new_para = copy.deepcopy(self.local_auxiliary)
         auxiliary_delta_para = copy.deepcopy(self.local_auxiliary)
+        local_steps = max(1, self.state.global_step)
         with torch.no_grad():
             for name, param in self.model.named_parameters():
                 if not param.requires_grad:
                     continue
                 else:
                     name = name.replace(".default", "")
-                    auxiliary_new_para[name] = (self.global_state[name] - param) / (self.args.max_steps * self.args.learning_rate) - self.correction[name]
+                    auxiliary_new_para[name] = (self.global_state[name] - param) / (local_steps * self.args.learning_rate) - self.correction[name]
                     auxiliary_delta_para[name] = auxiliary_new_para[name] - self.local_auxiliary[name]
         return auxiliary_new_para, auxiliary_delta_para
 

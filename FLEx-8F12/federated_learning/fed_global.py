@@ -1,6 +1,28 @@
 import random
 import torch
 
+from .frlora import (
+    FRLoRAState,
+    aggregate_adapter_states,
+    fold_frlora_residual,
+    reset_adapter_state,
+)
+
+
+def get_fedsa_local_state(global_dict, client_dict):
+    """Combine shared LoRA-A with one client's persistent private LoRA-B.
+
+    FedSA-LoRA trains both factors locally but sends only A to the server.  A
+    fresh dictionary is returned so the sequential single-process simulator
+    cannot accidentally mutate the saved private B state before training.
+    """
+
+    state = {key: value.detach().clone() for key, value in global_dict.items()}
+    for key, value in client_dict.items():
+        if key.endswith(".lora_B.weight"):
+            state[key] = value.detach().clone()
+    return state
+
 def get_clients_this_round(fed_args, round):
     if (fed_args.fed_alg).startswith('local'):
         clients_this_round = [int((fed_args.fed_alg)[-1])]
@@ -12,7 +34,20 @@ def get_clients_this_round(fed_args, round):
             clients_this_round = sorted(random.sample(range(fed_args.num_clients), fed_args.sample_clients))
     return clients_this_round
 
-def global_aggregate(fed_args, global_dict, local_dict_list, sample_num_list, clients_this_round, round_idx, proxy_dict=None, opt_proxy_dict=None, auxiliary_info=None, peft_config=None):
+def global_aggregate(
+    fed_args,
+    global_dict,
+    local_dict_list,
+    sample_num_list,
+    clients_this_round,
+    round_idx,
+    proxy_dict=None,
+    opt_proxy_dict=None,
+    auxiliary_info=None,
+    peft_config=None,
+    model=None,
+    frlora_state: FRLoRAState | None = None,
+):
     sample_this_round = sum([sample_num_list[client] for client in clients_this_round])
     global_auxiliary = None
 
@@ -23,8 +58,23 @@ def global_aggregate(fed_args, global_dict, local_dict_list, sample_num_list, cl
         for key in global_auxiliary.keys():
             delta_auxiliary = sum([auxiliary_delta_dict[client][key] for client in clients_this_round]) 
             global_auxiliary[key] += delta_auxiliary / fed_args.num_clients
+    elif fed_args.fed_alg == 'scaffold_reset':
+        # Evaluate the trained aggregate; reset happens only at local start.
+        for key in global_dict:
+            global_dict[key] = sum(
+                local_dict_list[client][key] * sample_num_list[client] / sample_this_round
+                for client in clients_this_round
+            )
+        global_auxiliary, auxiliary_delta_dict = auxiliary_info
+        for key in global_auxiliary.keys():
+            delta_auxiliary = sum(
+                auxiliary_delta_dict[client][key] for client in clients_this_round
+            )
+            global_auxiliary[key] += delta_auxiliary / fed_args.num_clients
     elif fed_args.fed_alg == 'flexlora':
         # FlexLoRA aggregation
+        if peft_config is None:
+            raise ValueError("`peft_config` is required for flexlora aggregation.")
         for key in global_dict.keys():
             if key.endswith("lora_B.weight"):
                 layer_name = key.replace(".lora_B.weight", "")
@@ -39,6 +89,38 @@ def global_aggregate(fed_args, global_dict, local_dict_list, sample_num_list, cl
             else:
                 # For other keys, average them
                 global_dict[key] = sum([local_dict_list[client][key] * sample_num_list[client] / sample_this_round for client in clients_this_round])
+
+    elif fed_args.fed_alg == 'fedsa':
+        # FedSA-LoRA shares only the A factor.  B stays permanently local and
+        # is restored for each client by main_sft.py before local training.
+        for key in global_dict.keys():
+            if key.endswith(".lora_A.weight"):
+                global_dict[key] = sum(
+                    local_dict_list[client][key] * sample_num_list[client] / sample_this_round
+                    for client in clients_this_round
+                )
+
+    elif fed_args.fed_alg in ['frlora', 'frlora_scaffold']:
+        # FRLoRA aggregates B/A for this round, folds their residual product
+        # into frozen base weights, then resets adapters to the fixed B0/A0.
+        # It must not be reduced to ordinary adapter-state averaging.
+        if model is None or frlora_state is None:
+            raise ValueError("FRLoRA aggregation requires both `model` and `frlora_state`.")
+        round_adapter_state = aggregate_adapter_states(
+            local_dict_list,
+            clients_this_round,
+            sample_num_list,
+            weighting=fed_args.aggregation_weighting,
+        )
+        fold_frlora_residual(model, round_adapter_state, frlora_state)
+        global_dict = reset_adapter_state(frlora_state)
+        if fed_args.fed_alg == 'frlora_scaffold':
+            global_auxiliary, auxiliary_delta_dict = auxiliary_info
+            for key in global_auxiliary.keys():
+                delta_auxiliary = sum(
+                    auxiliary_delta_dict[client][key] for client in clients_this_round
+                )
+                global_auxiliary[key] += delta_auxiliary / fed_args.num_clients
                 
     elif fed_args.fed_alg == 'fedavgm':
         # Momentum-based FedAvg

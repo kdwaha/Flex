@@ -1,5 +1,18 @@
 # FLEx
 
+> The maintained federated instruction-tuning path is documented in
+> [`doc/federated_instruction_tuning.md`](doc/federated_instruction_tuning.md).
+> It includes task-per-client Dolly/FLAN data adapters, FedAvg-LoRA,
+> FedSA-LoRA, and the ICLR 2025 FRLoRA implementation.  Use
+> `requirements-federated.txt` rather than the historical pinned
+> `requirements.txt` for this path.
+
+The maintained path also includes SCAFFOLD/reset, pFLAlign ablations,
+EOS-preserving completion loss, and periodic local/global diagnostics.
+See the [published results and reproduction guide](results/eos_fixed_20260921/README.md)
+for tables, client curves, and Hessian plots. The historical setup below is
+retained for reference; use the maintained guide for these experiments.
+
 ## Setup
 
 Clone the repo, submodules and install the required packages.
@@ -75,5 +88,3 @@ This project based on :
 *Year*: 2024 
 
 *Pages*: 6159-6172
-
-

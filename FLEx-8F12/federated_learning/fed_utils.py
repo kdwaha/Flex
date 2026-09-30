@@ -17,7 +17,7 @@ def get_proxy_dict(fed_args, global_dict):
 
 def get_auxiliary_dict(fed_args, global_dict):
 
-    if fed_args.fed_alg in ['scaffold']:
+    if fed_args.fed_alg in ['scaffold', 'frlora_scaffold', 'scaffold_reset']:
         global_auxiliary = {}               # c in SCAFFOLD
         for key in global_dict.keys():
             global_auxiliary[key] = torch.zeros_like(global_dict[key])

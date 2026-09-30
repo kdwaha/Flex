@@ -1,0 +1,11 @@
+name: flex-frlora
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      # The experiment runtime uses torch==2.5.1+cu124 (CUDA 12.4).
+      # Install the appropriate PyTorch 2.5.1 CPU or CUDA wheel for the host
+      # before this file's requirements; cu124 records the original build.
+      - -r requirements-federated.txt

@@ -1,0 +1,19 @@
+# Python 3.10 GPU experiment environment, recorded from installed metadata.
+# Install PyTorch separately to match the host: see environment.yml or README.
+accelerate==1.0.1
+datasets==3.1.0
+matplotlib==3.10.9
+peft==0.12.0
+protobuf==7.35.0
+pyarrow==24.0.0
+rich==15.0.0
+safetensors==0.7.0
+sentencepiece==0.2.1
+transformers==4.46.1
+trl==0.9.6
+
+# Generation metrics are implemented in-tree; evaluate is not required.
+# Optional for GPU QLoRA/FedAvg and FedSA.  FRLoRA intentionally rejects it
+# because the method updates frozen base weights in-place. Not installed in
+# the recorded experiment environment; install separately when needed:
+# bitsandbytes>=0.43.1

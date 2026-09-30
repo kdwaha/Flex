@@ -1,0 +1,22 @@
+# Generated Python files and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+
+# Local datasets, raw runs and model state. Curated results live in results/.
+/FLEx-8F12/data/
+/FLEx-8F12/outputs/
+checkpoint-*/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.log
+
+# Historical investigation notes with links to unpublished raw runs
+/FLEx-8F12/doc/eos_causality_20260921.md
+/FLEx-8F12/doc/pflalign_audit_20260921.md
