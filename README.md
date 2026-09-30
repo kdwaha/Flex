@@ -5,6 +5,7 @@ It supports task-partitioned Dolly/FLAN instruction tuning with FedAvg,
 FedSA-LoRA, FRLoRA, SCAFFOLD variants, and a LoRA adaptation of pFLAlign.
 
 - [Setup and usage](FLEx-8F12/doc/federated_instruction_tuning.md)
+- [Separate tlm environment snapshot](FLEx-8F12/env/tlm/README.md)
 - [Completed TinyLlama experiment and reproduction](FLEx-8F12/results/eos_fixed_20260921/README.md)
 - [Global and client-specific comparisons](FLEx-8F12/results/eos_fixed_20260921/comparison.md)
 - [Hessian estimates and spectrum](FLEx-8F12/results/eos_fixed_20260921/hessian_comparison.md)
